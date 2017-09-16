@@ -2,11 +2,13 @@ package com.vivo.yzz.myweather.db;
 
 import org.litepal.crud.DataSupport;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2017/9/16.
  */
 
-public class City extends DataSupport {
+public class City extends DataSupport  implements Serializable {
     private int id;
 
     private String cityName;

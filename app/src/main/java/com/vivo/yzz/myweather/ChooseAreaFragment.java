@@ -2,6 +2,7 @@ package com.vivo.yzz.myweather;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -94,6 +95,15 @@ public class ChooseAreaFragment extends Fragment {
                 }else if(cutrrentLevel==LEVEL_CITY){
                     selectedCity = cityList.get(i);
                     queuryCounties();
+                }else if(cutrrentLevel==LEVEL_COUNTY){
+                   County county= countyList.get(i);
+
+                    Intent intent=new Intent(getActivity(),WeatherActivity.class);
+
+                    intent.putExtra("county",county);
+
+                    getActivity().startActivity(intent);
+
                 }
             }
         });
@@ -113,6 +123,7 @@ public class ChooseAreaFragment extends Fragment {
 
 
     }
+
 
     //查询省
 
